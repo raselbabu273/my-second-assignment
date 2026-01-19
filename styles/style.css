@@ -1,3 +1,284 @@
-body{
-    background-color: aquamarine;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/* Shared Styles */
+/* body{
+    max-width: 1600px;
+    background-color: #1A0B2E;
+    margin: 0 auto;
+} */
+
+.display-flex {
+    display: flex;
+}
+
+.bg-color {
+    background-color: #1A0B2E;
+}
+
+.text-primary {
+    color: #FFFFFF;
+}
+
+.text-secondary,
+.card-name {
+    color: rgba(255, 255, 255, 0.668);
+    font-size: 1rem;
+}
+
+.btn-primary {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10000px;
+    background: linear-gradient(30deg,
+            rgba(247, 233, 63, 1),
+            rgba(251, 9, 180, 1),
+            rgba(145, 0, 248, 1));
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+    border: 2px solid #1a0b2e6e;
+}
+
+.card-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #00FF88;
+    margin-bottom: 16px;
+}
+
+/* Navbar Section */
+.navbar-section {
+    border-bottom: 1px solid #716d753c;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-menu li {
+    list-style-type: none;
+
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.navbar-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.gradient-text {
+    background: linear-gradient(30deg,
+            rgba(247, 233, 63, 1),
+            rgba(251, 9, 180, 1),
+            rgba(145, 0, 248, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+
+/* Banner Section */
+.banner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 100px;
+    background-image: url('../assets/hero-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.banner-images {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge {
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 8px;
+    width: 75px;
+    color: #1A0B2E;
+    background-color: #00FF88;
+    box-shadow: 0 3px 27px 0 rgba(0, 255, 136, 0.5);
+    border-radius: 1000px;
+    position: absolute;
+    right: 40.8%;
+    top: 14.2%;
+}
+
+.circle {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin-bottom: 40px;
+}
+
+.microphone {
+    position: absolute;
+    right: 46.3%;
+    top: 23%;
+    /* left: calc(100% - 46.2%); */
+}
+
+.banner-title {
+    font-size: 3.75rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.btn-secondary {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #00FF88;
+    padding: 12px 16px;
+    background-color: transparent;
+    border: 1px solid #00FF88;
+    border-radius: 10000px;
+}
+
+.btn-secondary:hover {
+    cursor: pointer;
+    border: 2px solid #00FF88;
+}
+
+#buttons {
+    margin-top: 24px;
+    justify-content: center;
+    gap: 8px;
+    display: flex;
+}
+
+/* About Section */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.about-section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.about-section-description {
+    line-height: 30px;
+}
+
+.about-container hr {
+    margin: 80px auto;
+    border: 0.5px solid #716d753c;
+}
+
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ===Responsive Styles=== */
+@media screen and (max-width:576px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .btn-hide {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: inline;
+    }
+
+    .banner {
+        background-image: url('../assets/hero-bg.png');
+        background-size: 700px 670px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* position: relative; */
+    }
+
+    .badge {
+        font-weight: 500;
+        padding: 8px;
+        width: 75px;
+        color: #1A0B2E;
+        background-color: #00FF88;
+        box-shadow: 0 3px 27px 0 rgba(0, 255, 136, 0.5);
+        border-radius: 1000px;
+        position: absolute;
+        right: 22%;
+        top: 15%;
+    }
+
+    .circle {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 40px;
+    }
+
+    .microphone {
+        position: absolute;
+        width: 15%;
+        right: 42.5%;
+        top: 22%;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+
+    .about-container {
+        /* max-width: 1200px;
+        margin: 0 auto; */
+        width: 100%;
+        text-align: center;
+        padding: 40px;
+    }
 }
