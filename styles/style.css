@@ -8,12 +8,52 @@
     font-family: "Inter", sans-serif;
 }
 
-/* Shared Styles */
-/* body{
-    max-width: 1600px;
-    background-color: #1A0B2E;
-    margin: 0 auto;
-} */
+/* ==Animation Style== */
+
+@keyframes bounce {
+    0% {
+        top: 24%;
+    }
+
+    100% {
+        top: 22%;
+    }
+}
+
+.microphone {
+    background-color: transparent;
+    position: relative;
+    animation: bounce 1.5s ease-in-out 0.5s infinite alternate;
+}
+
+
+.title {
+    background-image:
+        linear-gradient(to left bottom,
+            rgba(145, 0, 248, 1),
+            rgba(247, 233, 63, 0.9),
+            rgba(251, 9, 180, 1));
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate {
+    from {
+        background-position: 200%;
+    }
+
+    to {
+        background-position: 0;
+    }
+}
+
+
+
+/* ==Shared Styles== */
 
 .display-flex {
     display: flex;
@@ -51,6 +91,13 @@
     transform: scale(1.05);
 }
 
+.titles {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .card-title {
     font-size: 3rem;
     font-weight: 900;
@@ -64,7 +111,9 @@
     border-radius: 40px;
 }
 
-/* Navbar Section */
+
+/* ==Navbar Section== */
+
 .navbar-section {
     border-bottom: 1px solid #716d753c;
 }
@@ -93,17 +142,8 @@
 }
 
 .navbar-h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
-}
-
-.gradient-text {
-    background: linear-gradient(30deg,
-            rgba(247, 233, 63, 1),
-            rgba(251, 9, 180, 1),
-            rgba(145, 0, 248, 1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hamburger-icon {
@@ -111,7 +151,8 @@
 }
 
 
-/* Banner Section */
+/* ==Banner Section== */
+
 .banner {
     max-width: 1600px;
     margin: 0 auto;
@@ -157,8 +198,6 @@
 .microphone {
     position: absolute;
     right: 46.3%;
-    top: 23%;
-    /* left: calc(100% - 46.2%); */
 }
 
 .banner-title {
@@ -191,18 +230,14 @@
     display: flex;
 }
 
-/* About Section */
+
+/* ==About Section== */
+
 .about-container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     padding-top: 50px;
-}
-
-.about-section-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 16px;
 }
 
 .about-section-description {
@@ -224,18 +259,17 @@
     align-items: center;
 }
 
-/* TechWave Section */
-.tech-title {
-    font-size: 3rem;
-    font-weight: 700;
+
+/* ==TechWave Section== */
+
+.tech-container {
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
     padding-top: 120px;
     padding-bottom: 40px;
 }
 
-.tech-container {
+.tech-box-container {
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 120px;
@@ -274,7 +308,8 @@
 }
 
 
-/* Feature Section */
+/* ==Feature Section== */
+
 .features {
     max-width: 1200px;
     margin: 0 auto;
@@ -322,18 +357,12 @@
 }
 
 
-/* Host Section */
+/* ==Host Section== */
+
 .host-section {
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 120px;
-}
-
-.host-title {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
 }
 
 .host-container {
@@ -381,7 +410,7 @@
 }
 
 
-/* Footer Section */
+/* ==Footer Section== */
 
 .footer-container {
     max-width: 1600px;
@@ -430,12 +459,33 @@
 
 
 
-/* ===Responsive Styles=== */
+/* ====Responsive Styles==== */
+
 @media screen and (max-width:576px) {
+
+    /* ==Shared Styles== */
+
     body {
         background-color: #1A0B2E;
         margin: 0 auto;
     }
+
+    .titles {
+        font-size: 2.3rem;
+        font-weight: 700;
+        text-align: center;
+        justify-self: center;
+        margin-bottom: 25px 20px;
+    }
+
+    .btn-primary {
+        max-width: 420px;
+        font-size: 0.75rem;
+        padding: 12px;
+    }
+
+
+    /* ==Navbar Section== */
 
     .navbar {
         padding: 20px;
@@ -453,14 +503,15 @@
         display: inline;
     }
 
+
+    /* ==Banner Section== */
+
     .banner {
         background-size: 700px 670px;
-        /* background-repeat: no-repeat; */
         background-position: center center;
         justify-content: center;
         align-items: center;
         text-align: center;
-        /* position: relative; */
     }
 
     .badge {
@@ -484,11 +535,12 @@
     }
 
     .microphone {
-        position: absolute;
         width: 15%;
         right: 42.5%;
-        top: 22%;
     }
+
+
+    /* ==About Section== */
 
     .card-container {
         grid-template-columns: repeat(2, 1fr);
@@ -501,24 +553,14 @@
         padding: 40px;
     }
 
-    .about-section-title {
-        font-size: 2rem;
-        font-weight: 700;
-    }
-
     .card-title {
         font-size: 2.5rem;
     }
 
-    .tech-title {
-        font-size: 1.75rem;
-        font-weight: 700;
-        max-width: 100%;
-        margin: 0 auto;
-        text-align: center;
-    }
 
-    .tech-container {
+    /* ==TechWave Section== */
+
+    .tech-box-container {
         margin: 0 auto;
         display: block;
         flex-direction: column;
@@ -540,12 +582,22 @@
         border-radius: 24px;
         margin-bottom: 16px;
     }
-    
+
+
+    /* ==Feature Section== */
+
+    .features {
+        margin: 0 auto;
+    }
+
     .video-container {
         flex-direction: column;
         grid-template-columns: repeat(1, 1fr);
         justify-content: center;
     }
+
+
+    /* ==Host Section== */
 
     .host-container {
         display: block;
@@ -564,10 +616,8 @@
         gap: 8px;
     }
 
-    .footer-container {
-        max-width: 440px;
-        margin: 0 auto;
-    }
+
+    /* ==Footer Section== */
 
     .footer-content {
         max-width: 400px;
